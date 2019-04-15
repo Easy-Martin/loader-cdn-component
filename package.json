@@ -2,7 +2,7 @@
   "name": "loader-cdn-component",
   "version": "0.0.1",
   "description": "loader module for cdn",
-  "main": "libs/loader-cdn-component.js",
+  "main": "libs/loader-cdn-component.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
