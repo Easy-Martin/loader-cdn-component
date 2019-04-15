@@ -3,5 +3,5 @@
 # dependencies
 /node_modules
 /src
-/script
+/scripts
 /package.develop.json
