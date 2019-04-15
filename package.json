@@ -3,17 +3,11 @@
   "version": "0.0.1",
   "description": "loader module for cdn",
   "main": "libs/loader-cdn-component.es.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "loader",
     "react",
     "systemjs"
   ],
   "author": "easy-martin",
-  "license": "MIT",
-  "dependencies": {
-    "systemjs": "^3.1.2"
-  }
+  "license": "MIT"
 }
