@@ -14,7 +14,7 @@ args
   .filter(name => /^--/.test(name))
   .map(name => {
     let arr = name.split('=');
-    params[arr[0]] = arr[1] || true;
+    params[arr[0].replace('--','')] = arr[1] || true;
   });
 
 const getBabelOptions = () => ({
@@ -77,7 +77,7 @@ function getOutputOptions(output, name) {
 
 async function build() {
   const bundle = await rollup.rollup(getInputOptions(path.resolve(process.cwd(), './index.js')));
-  await bundle.write(getOutputOptions(path.resolve(process.cwd(), `./dist/loader.cdn.component.${format}.js`), 'loader'));
+  await bundle.write(getOutputOptions(path.resolve(process.cwd(), `./libs/loader.cdn.component.${format}.js`), 'loader'));
   // create a bundle
 
   // or write the bundle to disk
