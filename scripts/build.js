@@ -5,8 +5,6 @@ const commonjs = require('rollup-plugin-commonjs');
 const babel = require('rollup-plugin-babel');
 const replace = require('rollup-plugin-replace');
 
-const extensions = ['.js', '.jsx'];
-
 const args = process.argv.slice(2);
 
 const params = {};
