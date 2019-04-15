@@ -76,7 +76,7 @@ function getOutputOptions(output, name) {
 }
 
 async function build() {
-  const bundle = await rollup.rollup(getInputOptions(path.resolve(process.cwd(), './index.js')));
+  const bundle = await rollup.rollup(getInputOptions(path.resolve(process.cwd(), '.src/index.js')));
   await bundle.write(getOutputOptions(path.resolve(process.cwd(), `./libs/loader.cdn.component.${format}.js`), 'loader'));
   // create a bundle
 
