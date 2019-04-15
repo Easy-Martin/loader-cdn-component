@@ -2,7 +2,7 @@
   "name": "loader-cdn-component",
   "version": "0.0.1",
   "description": "loader module for cdn",
-  "main": "libs/loader-cdn-component.es.js",
+  "main": "index.js",
   "keywords": [
     "loader",
     "react",

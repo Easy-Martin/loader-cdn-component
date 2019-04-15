@@ -1,0 +1,1 @@
+module.exports = require('./libs/loader.cdn.component.es')
