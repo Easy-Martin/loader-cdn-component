@@ -828,6 +828,8 @@
     };
   })();
 
+  window.System = System;
+
   function systemImport(output, exportName) {
     if (exportName === void 0) {
       exportName = "default";
