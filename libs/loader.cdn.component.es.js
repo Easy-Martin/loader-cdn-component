@@ -794,8 +794,10 @@ function loadScript(src, exportName) {
 function loadComponent(_ref) {
   var src = _ref.src,
       exportName = _ref.exportName,
-      placeholder = _ref.placeholder,
-      errorholder = _ref.errorholder;
+      _ref$errorholder = _ref.errorholder,
+      errorholder = _ref$errorholder === void 0 ? null : _ref$errorholder,
+      _ref$placeholder = _ref.placeholder,
+      placeholder = _ref$placeholder === void 0 ? null : _ref$placeholder;
 
   var LoadWrapComponent =
   /*#__PURE__*/
@@ -927,8 +929,10 @@ function loadDecComponent(_ref2) {
       exportName = _ref2.exportName,
       Component = _ref2.Component,
       args = _ref2.args,
-      errorholder = _ref2.errorholder,
-      placeholder = _ref2.placeholder;
+      _ref2$errorholder = _ref2.errorholder,
+      errorholder = _ref2$errorholder === void 0 ? null : _ref2$errorholder,
+      _ref2$placeholder = _ref2.placeholder,
+      placeholder = _ref2$placeholder === void 0 ? null : _ref2$placeholder;
 
   var LoadWrapComponent =
   /*#__PURE__*/
