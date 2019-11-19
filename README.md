@@ -3,9 +3,10 @@
 - 特殊场景使用
 - 此包依赖systemjs模块加载库 webpack下使用会产生警告
 
+![avatar](GIF.gif)
+
 ```javascript
 import React from "react"
-import ReactDOM from "react-dom";
 import LoadCDN from 'load-cdn-component'
 import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
