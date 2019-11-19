@@ -1,4 +1,7 @@
 # 可加载 cdn 的 umd 包
+- umd包依赖需要再全局定义
+- 特殊场景使用
+- 此包依赖systemjs模块加载库 webpack下使用会产生警告
 
 ```javascript
 import React from "react"
@@ -8,7 +11,7 @@ import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 import moment from "moment";
 
-//Antd 依赖 umd包依赖全局
+//Antd 依赖 umd包依赖全局 实际使用配置webpack externals 使用
 window.React = React;
 window.PropTypes = PropTypes;
 window.ReactDOM = ReactDOM;

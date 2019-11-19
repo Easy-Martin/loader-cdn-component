@@ -1,6 +1,6 @@
 {
   "name": "load-cdn-component",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "loader component for cdn address",
   "repository": {
     "type": "git",
