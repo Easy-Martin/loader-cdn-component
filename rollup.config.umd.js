@@ -15,7 +15,7 @@ const rollupConfig = {
   output: {
     dir: 'umd',
     format: 'umd',
-    name: 'LoaderCDN',
+    name: 'LoadCDN',
     sourceMap: true,
     entryFileNames: 'load-cdn-component.min.js',
     exports: 'named'

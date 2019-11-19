@@ -17,7 +17,7 @@ const rollupConfig = {
     dir: 'es',
     format: 'es',
     sourceMap: true,
-    entryFileNames: 'load-cdn-component.min.js',
+    entryFileNames: 'load-cdn-component.js',
     exports: 'named'
   },
   experimentalCodeSplitting: true,
