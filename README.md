@@ -21,6 +21,6 @@ window.moment = moment;
 LoadCDN.loadStyle("https://cdn.bootcss.com/antd/3.23.6/antd.min.css")
 const Button = LoadCDN.loadComponent('https://cdn.bootcss.com/antd/3.23.6/antd.min.js', 'Button')
 
-ReactDOM.render(<Button onClick={() => alert(1)}>测试CDN组件</Button>>, document.getElementById("root"));
+ReactDOM.render(<Button onClick={() => alert(1)}>测试CDN组件</Button>, document.getElementById("root"));
 
 ```
