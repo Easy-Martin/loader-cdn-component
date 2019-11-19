@@ -1,13 +1,58 @@
 {
   "name": "loader-cdn-component",
-  "version": "0.0.1",
-  "description": "loader module for cdn",
-  "main": "index.js",
+  "version": "0.1.13",
+  "description": "video for html5 support flv m3u8",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Easy-Martin/lm-player.git"
+  },
   "keywords": [
-    "loader",
-    "react",
-    "systemjs"
+    "video",
+    "flv",
+    "hls",
+    "player",
+    "m3u8"
   ],
-  "author": "easy-martin",
-  "license": "MIT"
+  "author": "Easy-Martin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Easy-Martin/lm-player/issues"
+  },
+  "homepage": "https://github.com/Easy-Martin/lm-player",
+  "main": "es/player.js",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-named-asset-import": "^0.3.1",
+    "babel-preset-react-app": "^7.0.2",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0",
+    "rollup": "^1.26.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "scripts": {
+    "es": "rollup --config rollup.config.es.js",
+    "umd": "rollup --config rollup.config.umd.js"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  }
 }

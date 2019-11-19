@@ -1,1 +1,1 @@
-module.exports = require('./libs/loader.cdn.component.es')
+module.exports = require('./dist/LMPlayer.js')
