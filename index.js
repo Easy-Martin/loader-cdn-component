@@ -1,1 +1,1 @@
-module.exports = require('./dist/LMPlayer.js')
+module.exports = require('./umd/load-cdn-component.min.js')
