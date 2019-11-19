@@ -970,7 +970,7 @@ function getCacheKey(path, exportName) {
 var SystemImportCache = {};
 
 function systemImport(path, exportName) {
-  return window.System.import(output).then(function (module) {
+  return window.System.import(path).then(function (module) {
     var component = exportName ? module.default[exportName] || module[exportName] : module.default;
     SystemImportCache[getCacheKey(path, exportName)] = component;
     return component;
@@ -979,7 +979,7 @@ function systemImport(path, exportName) {
 
 var loaderCss = {};
 
-function loaderStyle(path) {
+function loadStyle(path) {
   return new Promise(function (resolve, reject) {
     if (loaderCss[path]) {
       resolve();
@@ -1061,12 +1061,6 @@ function loadComponent(path, exportName) {
           return;
         }
 
-        if (!window.ModuleConfig[path]) {
-          this.setState({
-            C: NoPage
-          });
-        }
-
         if (SystemImportCache[getCacheKey(path, exportName)] !== undefined) {
           var entry = SystemImportCache[getCacheKey(path, exportName)];
           return this.setState({
@@ -1126,8 +1120,8 @@ var LoaderCDN = {
   loadComponent: loadComponent,
   SystemImportCache: SystemImportCache,
   loadScript: loadScript,
-  loaderStyle: loaderStyle
+  loadStyle: loadStyle
 };
 
 export default LoaderCDN;
-export { SystemImportCache, loadComponent, loadScript, loaderStyle };
+export { SystemImportCache, loadComponent, loadScript, loadStyle };

@@ -12,7 +12,7 @@ function getCacheKey(path, exportName) {
 
 const SystemImportCache = {}
 function systemImport(path, exportName) {
-  return window.System.import(output).then(module => {
+  return window.System.import(path).then(module => {
     const component = exportName ? module.default[exportName] || module[exportName] : module.default
     SystemImportCache[getCacheKey(path, exportName)] = component
     return component
@@ -21,7 +21,7 @@ function systemImport(path, exportName) {
 
 let loaderCss = {}
 
-function loaderStyle(path) {
+function loadStyle(path) {
   return new Promise((resolve, reject) => {
     if (loaderCss[path]) {
       resolve()
@@ -85,9 +85,6 @@ function loadComponent(path, exportName) {
       if (this.state.C) {
         return
       }
-      if (!window.ModuleConfig[path]) {
-        this.setState({ C: NoPage })
-      }
       if (SystemImportCache[getCacheKey(path, exportName)] !== undefined) {
         const entry = SystemImportCache[getCacheKey(path, exportName)]
         return this.setState({
@@ -124,8 +121,8 @@ function loadComponent(path, exportName) {
   return React.forwardRef((props, ref) => <LoadWrapComponent {...props} forwardRef={ref} />)
 }
 
-const LoaderCDN = { loadComponent, SystemImportCache, loadScript, loaderStyle }
+const LoaderCDN = { loadComponent, SystemImportCache, loadScript, loadStyle }
 
-export { loadComponent, SystemImportCache, loadScript, loaderStyle }
+export { loadComponent, SystemImportCache, loadScript, loadStyle }
 
 export default LoaderCDN
