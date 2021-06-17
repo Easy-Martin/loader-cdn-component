@@ -19,7 +19,6 @@
   "homepage": "https://github.com/Easy-Martin/lm-player",
   "main": "index.js",
   "dependencies": {
-    "prop-types": "^15.7.2",
     "react": "^16.8.6"
   },
   "devDependencies": {

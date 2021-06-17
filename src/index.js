@@ -1,5 +1,4 @@
 import React from 'react'
-import PropsType from 'prop-types'
 import './systemjs'
 
 function getCacheKey(path, exportName) {
@@ -12,7 +11,7 @@ function getCacheKey(path, exportName) {
 
 const SystemImportCache = {}
 function systemImport(path, exportName) {
-  return window.System.import(path).then(module => {
+  return window.System.import(path).then((module) => {
     const component = exportName ? module.default[exportName] || module[exportName] : module.default
     SystemImportCache[getCacheKey(path, exportName)] = component
     return component
@@ -34,7 +33,7 @@ function loadStyle(path) {
       link.addEventListener('load', () => {
         resolve()
       })
-      link.addEventListener('error', e => {
+      link.addEventListener('error', (e) => {
         reject(e)
       })
       document.head.appendChild(link)
@@ -63,16 +62,13 @@ function loadComponent(path, exportName) {
     return SystemImportCache[getCacheKey(path, exportName)]
   }
   class LoadWrapComponent extends React.Component {
-    static propTypes = {
-      forwardRef: PropsType.any
-    }
     constructor() {
       super()
       const entry = SystemImportCache[getCacheKey(path, exportName)]
       this.state = {
         C: entry,
         isError: false,
-        loaded: false
+        loaded: false,
       }
     }
 
@@ -89,20 +85,20 @@ function loadComponent(path, exportName) {
         const entry = SystemImportCache[getCacheKey(path, exportName)]
         return this.setState({
           C: entry,
-          loaded: true
+          loaded: true,
         })
       }
-      loadScript(path, exportName).then(entry => {
+      loadScript(path, exportName).then((entry) => {
         if (entry) {
           return this.setState({
             C: entry,
-            loaded: true
+            loaded: true,
           })
         } else {
           console.error('模块未配置！', path, exportName)
           this.setState({
             isError: true,
-            loaded: true
+            loaded: true,
           })
         }
       })
